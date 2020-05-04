@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/spsh6nqd1gxey414?svg=true)](https://ci.appveyor.com/project/dmitry-korotkov/syntactic-constructions-task-1)
