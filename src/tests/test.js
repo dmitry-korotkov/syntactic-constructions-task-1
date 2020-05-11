@@ -1,10 +1,11 @@
 import getNumber from '../js/app';
 
 describe('getMostHealthy', () => {
-  test('getNan', () => {
+  test('getError', () => {
     const someNumber = 'sd231';
-    const result = getNumber(someNumber);
-    expect(result).toBe(NaN);
+    expect(() => {
+      getNumber(someNumber);
+    }).toThrow();
   });
   test('getNumber', () => {
     const someNumber = '123213';
@@ -16,14 +17,21 @@ describe('getMostHealthy', () => {
     const result = getNumber(someNumber);
     expect(result).toBe(14325);
   });
-  test('getNan', () => {
+  test('getError', () => {
     const someNumber = 'sometext';
-    const result = getNumber(someNumber);
-    expect(result).toBe(NaN);
+    expect(() => {
+      getNumber(someNumber);
+    }).toThrow();
   });
-  test('getNan', () => {
+  test('getNumber', () => {
     const someNumber = '1244a';
     const result = getNumber(someNumber);
-    expect(result).toBe(NaN);
+    expect(result).toBe(1244);
+  });
+  test('getError', () => {
+    const someNumber = '0x12';
+    expect(() => {
+      getNumber(someNumber);
+    }).toThrow();
   });
 });

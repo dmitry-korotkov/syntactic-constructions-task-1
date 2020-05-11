@@ -1,11 +1,12 @@
 export default function getNumber(count) {
-  const number = Number(count);
+  const parsedCount = parseInt(count, 10);
+  const parsedparsedCountHexadecimal = parseInt(count, 16);
   try {
-    if (typeof count !== 'number') {
+    if (Number.isNaN(parsedCount) || (parsedCount === 0 && parsedparsedCountHexadecimal !== 0)) {
       throw Error('Ошибка! Ввод не является числом в десятичной системе счисления');
     }
   } catch (e) {
-    console.log(e.message);
+    throw Error('Ошибка! Ввод не является числом в десятичной системе счисления');
   }
-  return number;
+  return parsedCount;
 }
